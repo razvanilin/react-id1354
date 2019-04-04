@@ -10,7 +10,7 @@ cd ../client
 npm install
 ```
 
-Install MySql and run and make sure the service is running.
+Install MySql and make sure the service is running.
 
 Create MySQL user and a database.
 
