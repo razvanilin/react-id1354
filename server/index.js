@@ -10,6 +10,7 @@ const _ = require("lodash");
 const settings = process.env.NODE_ENV === "production" ? require("./settings") : require("./settings-dev");
 const models = require("./models/index");
 const routes = require("./api");
+const mockData = require("./modules/mockTheApp");
 
 const app = express();
 app.settings = settings;
@@ -40,5 +41,7 @@ _.each(routes, (controller, route) => {
 });
 
 app.listen(app.settings.port, () => {
+  // mock data if database is empty
+  mockData();
   console.log(`Running server on port ${app.settings.port}`); // eslint-disable-line
 });
